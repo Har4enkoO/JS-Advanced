@@ -1,7 +1,7 @@
 let startNumber = +prompt("Введіть нижнє ціле значення");
 while (
   isNaN(startNumber) ||
-  startNumber - Math.floor(startNumber) != 0 ||
+  !Number.isInteger(startNumber) ||
   startNumber == ""
 ) {
   startNumber = +prompt(
@@ -12,7 +12,7 @@ while (
 let endNumber = +prompt("Введіть верхнє ціле значення");
 while (
   isNaN(endNumber) ||
-  endNumber - Math.floor(endNumber) != 0 ||
+  !Number.isInteger(endNumber) ||
   endNumber == "" ||
   endNumber < startNumber
 ) {
