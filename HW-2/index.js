@@ -1,11 +1,24 @@
 let startNumber = +prompt("Введіть нижнє ціле значення");
-while (!isNaN(startNumber) || startNumber - Math.floor(startNumber) != 0 || startNumber == "") {
-  startNumber = +prompt("Введіть корреектне нижнє ціле значення. Має бути ціле число!!");
+while (
+  isNaN(startNumber) ||
+  startNumber - Math.floor(startNumber) != 0 ||
+  startNumber == ""
+) {
+  startNumber = +prompt(
+    "Введіть корреектне нижнє ціле значення. Має бути ціле число!!"
+  );
 }
 
 let endNumber = +prompt("Введіть верхнє ціле значення");
-while (!isNaN(endNumber) || endNumber - Math.floor(endNumber) != 0 || endNumber == "") {
-  endNumber = +prompt("Введіть корреектне верхнє ціле значення. Має бути ціле число!!");
+while (
+  isNaN(endNumber) ||
+  endNumber - Math.floor(endNumber) != 0 ||
+  endNumber == "" ||
+  endNumber < startNumber
+) {
+  endNumber = +prompt(
+    "Введіть корреектне верхнє ціле значення. Має бути ціле число та більше за нижнє число!!"
+  );
 }
 
 const INCLUDE_EVEN = confirm("Чи необхідно враховувати парні значення");
