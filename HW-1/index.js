@@ -60,20 +60,21 @@ document.writeln(
   "<br />"
 );
 
+let profit;
 if (DISCOUNT > 0.5) {
-  const PROFIT =
+  profit =
     "Втрачена вигода: " +
     (FRUITES_SUM * DISCOUNT - FRUITES_SUM / 2).toFixed(2) +
-    "<br />";
+    "<br /><br />";
 } else if (DISCOUNT < 0.5) {
-  const PROFIT =
+  profit =
     "Прибуток склав: " +
     (FRUITES_SUM - FRUITES_SUM * DISCOUNT - FRUITES_SUM / 2).toFixed(2) +
-    "<br />";
+    "<br /><br />";
 } else {
-  const PROFIT = "Товар продано по собівартості" + "<br />";
+  profit = "Товар продано по собівартості" + "<br /><br />";
 }
-document.writeln(PROFIT);
+document.writeln(profit);
 
 document.writeln("Завдання категорії Advanced", "<br />");
 document.writeln(`
@@ -95,5 +96,5 @@ document.writeln(`
     Знижка складає: ${
       DISCOUNT * 100
     }% - за умови покупки всіх трьох товарі.<br \/>
-    ${PROFIT}
+    ${profit}
 `);
