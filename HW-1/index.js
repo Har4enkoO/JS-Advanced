@@ -41,7 +41,7 @@ document.writeln(
 );
 
 document.writeln(
-  "Здача при покупці на 500 грн.: ",
+  "Решта при покупці на 500 грн.: ",
   500 - FRUITES_SUM,
   ".",
   "<br />"
