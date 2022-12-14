@@ -1,6 +1,6 @@
 const APPLES = 15.678;
-let ORANGES = 123.965;
-let BANANAS = 90.2345;
+const ORANGES = 123.965;
+const BANANAS = 90.2345;
 document.writeln("Завдання категорії Base", "<br />");
 
 document.writeln(
