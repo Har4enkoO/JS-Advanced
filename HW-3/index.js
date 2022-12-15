@@ -62,7 +62,7 @@ const convertCurrency = (money) => {
 };
 
 // Task #9-10
-const getRandomPassword = (digitNumber) => {
+const getRandomPassword = (digitNumber = 8) => {
   let password = "";
   for (let i = 0; i < digitNumber; i++) {
     password += Math.floor(Math.random() * 10);
