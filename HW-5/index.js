@@ -49,7 +49,7 @@ function getMedian(...numbers) {
     return median;
   } else {
     const index1 = sortedNumbers.length / 2 - 1;
-    const index2 = sortedNumbers  .length / 2;
+    const index2 = sortedNumbers.length / 2;
     const median = (sortedNumbers[index1] + sortedNumbers[index2]) / 2;
     return median;
   }
