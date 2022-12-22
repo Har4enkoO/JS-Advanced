@@ -2,10 +2,11 @@ let startNumber = +prompt("Введіть нижнє ціле значення")
 while (
   isNaN(startNumber) ||
   !Number.isInteger(startNumber) ||
-  startNumber == ""
+  startNumber == "" ||
+  startNumber < 0
 ) {
   startNumber = +prompt(
-    "Введіть корреектне нижнє ціле значення. Має бути ціле число!!"
+    "Введіть корреектне нижнє ціле значення. Має бути ціле число Та більше за нуль!! "
   );
 }
 
