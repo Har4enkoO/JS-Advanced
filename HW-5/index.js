@@ -39,14 +39,17 @@ const getAverage = (...numbers) => {
 
 //Task #4
 function getMedian(...numbers) {
-  const sortedNumbers = numbers.sort((a, b) => a - b);
-  if (numbers.length % 2 !== 0) {
-    const index = Math.ceil(numbers.length / 2);
+  const sortedNumbers = numbers
+    .filter((el) => Number.isInteger(el))
+    .sort((a, b) => a - b);
+  console.log(sortedNumbers);
+  if (sortedNumbers.length % 2 !== 0) {
+    const index = Math.ceil(sortedNumbers.length / 2);
     const median = sortedNumbers[index];
     return median;
   } else {
-    const index1 = numbers.length / 2 - 1;
-    const index2 = numbers.length / 2;
+    const index1 = sortedNumbers.length / 2 - 1;
+    const index2 = sortedNumbers  .length / 2;
     const median = (sortedNumbers[index1] + sortedNumbers[index2]) / 2;
     return median;
   }
@@ -124,7 +127,7 @@ document.writeln(
   "<br />"
 );
 document.writeln(`Завдання №3: ${getAverage(0, 100, 3.75)}`, "<br />");
-document.writeln(`Завдання №4: ${getMedian(4, 3, 2, 1, 5)}`, "<br />");
+document.writeln(`Завдання №4: ${getMedian(4, 3, 2, 1, 5, 6.5)}`, "<br />");
 document.writeln(
   `Завдання №5: ${filterEvenNumbers(1, 2, 3, 4, 5, 6, 7, 8, 9)}`,
   "<br />"
@@ -158,14 +161,3 @@ document.writeln(
   "<br />"
 );
 document.writeln(`Завдання №9: ${divideByThree("commander")}`, "<br />");
-
-function allPossibleCombinations(input, length, curstr) {
-  if(curstr.length == length) return [ curstr ];
-  var ret = [];
-  for(var i = 0; i < input.length; i++) {
-      ret.push.apply(ret, allPossibleCombinations(input, length, curstr + input[i]));
-  }
-  return ret;
-}
-
-console.log(allPossibleCombinations("man", 3, ''));
