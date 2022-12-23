@@ -81,11 +81,13 @@ function getDividedByFive(...numbers) {
 
 //Task #8
 function replaceBadWords(string) {
-  const bedWords = ["fuck", "shit"];
+  const bedWords = ["fuck", "shit", "kid"];
   const correctedString = string.split(" ").map((word) => {
     for (i = 0; i < bedWords.length; i++) {
       if (word.toLowerCase().includes(bedWords[i])) {
-        word = word.toLowerCase().replace(bedWords[i], "****");
+        word = word
+          .toLowerCase()
+          .replace(bedWords[i], "*".repeat(bedWords[i].length));
       }
     }
     return word;
@@ -115,7 +117,7 @@ const generateCombinations = (word) => {
     let char = word[i];
     let remainingChars = word.slice(0, i) + word.slice(i + 1, word.length);
     for (let permutation of generateCombinations(remainingChars)) {
-      permutationsArray.push(char + permutation);
+      permutationsArray = [...permutationsArray, char + permutation];
     }
   }
   return permutationsArray;
