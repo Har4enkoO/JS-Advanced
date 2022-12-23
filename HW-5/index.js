@@ -80,8 +80,7 @@ const getDividedByFive = (...numbers) => {
 };
 
 //Task #8
-const replaceBadWords = (string) => {
-  const bedWords = ["fuck", "shit", "kid"];
+const replaceBadWords = (string, bedWords) => {
   const correctedString = string.split(" ").map((word) => {
     for (i = 0; i < bedWords.length; i++) {
       if (word.toLowerCase().includes(bedWords[i])) {
@@ -175,7 +174,11 @@ document.writeln(
   "<br />"
 );
 document.writeln(
-  `Завдання №8: ${replaceBadWords("Are you fucking kidding?")}`,
+  `Завдання №8: ${replaceBadWords("Are you fucking kidding?", [
+    "fuck",
+    "shit",
+    "kid",
+  ])}`,
   "<br />"
 );
 document.writeln(`Завдання №9: ${divideByThree("commander")}`, "<br />");
