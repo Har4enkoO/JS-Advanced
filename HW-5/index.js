@@ -38,7 +38,7 @@ const getAverage = (...numbers) => {
 };
 
 //Task #4
-function getMedian(...numbers) {
+const getMedian = (...numbers) => {
   const sortedNumbers = numbers
     .filter((el) => Number.isInteger(el))
     .sort((a, b) => a - b);
@@ -53,16 +53,16 @@ function getMedian(...numbers) {
     const median = (sortedNumbers[index1] + sortedNumbers[index2]) / 2;
     return median;
   }
-}
+};
 
 //Task #5
-function filterEvenNumbers(...numbers) {
+const filterEvenNumbers = (...numbers) => {
   const filteredArr = numbers.filter((el) => el % 2 === 1);
   return filteredArr;
-}
+};
 
 //task #6
-function countPositiveNumbers(...numbers) {
+const countPositiveNumbers = (...numbers) => {
   const count = numbers.reduce((acc, el) => {
     if (el > 0) {
       return acc + 1;
@@ -71,16 +71,16 @@ function countPositiveNumbers(...numbers) {
     }
   }, 0);
   return count;
-}
+};
 
 //Task #7
-function getDividedByFive(...numbers) {
+const getDividedByFive = (...numbers) => {
   const filtered = numbers.filter((num) => num % 5 === 0);
   return filtered;
-}
+};
 
 //Task #8
-function replaceBadWords(string) {
+const replaceBadWords = (string) => {
   const bedWords = ["fuck", "shit", "kid"];
   const correctedString = string.split(" ").map((word) => {
     for (i = 0; i < bedWords.length; i++) {
@@ -93,10 +93,10 @@ function replaceBadWords(string) {
     return word;
   });
   return correctedString.join(" ");
-}
+};
 
 //Task #9
-function divideByThree(word) {
+const divideByThree = (word) => {
   let wordToWork = word;
   let result = [];
   while (wordToWork.length > 3) {
@@ -105,7 +105,7 @@ function divideByThree(word) {
   }
   result = [...result, wordToWork];
   return result;
-}
+};
 
 // Task #10
 const generateCombinations = (word) => {
