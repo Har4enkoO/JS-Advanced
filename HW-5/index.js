@@ -105,6 +105,22 @@ function divideByThree(word) {
   return result;
 }
 
+// Task #10
+const generateCombinations = (word) => {
+  if (word.length < 2) {
+    return word;
+  }
+  let permutationsArray = [];
+  for (let i = 0; i < word.length; i++) {
+    let char = word[i];
+    let remainingChars = word.slice(0, i) + word.slice(i + 1, word.length);
+    for (let permutation of generateCombinations(remainingChars)) {
+      permutationsArray.push(char + permutation);
+    }
+  }
+  return permutationsArray;
+};
+
 document.writeln(`Завдання №1: ${getRandomArray(10, 1, 100)}`, "<br />");
 document.writeln(
   `Завдання №2: ${getModa(
@@ -161,3 +177,4 @@ document.writeln(
   "<br />"
 );
 document.writeln(`Завдання №9: ${divideByThree("commander")}`, "<br />");
+document.writeln(`Завдання №10: ${generateCombinations("man")}`, "<br />");
